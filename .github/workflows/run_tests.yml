@@ -1,0 +1,29 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build and run Docker container
+        run: docker build -t test-cont .
+
+      - name: Show images before run
+        run: docker images  
+      
+      - name: Docker run
+        run: docker run --rm --name test-container -e RP_API_KEY="${{ secrets.RP_API_KEY }}" -e api_key="${{ secrets.API_KEY }}" test-cont

@@ -1,0 +1,83 @@
+[tool.poetry]
+name = "stests"
+version = "0.1.23"
+homepage = "https://github.com/Laikovski/dev_repo"
+description = "."
+readme = "README.md"
+license = "Proprietary"
+
+
+
+authors = [
+    "Eugenio Laikovski <email>",
+]
+
+
+
+packages = [
+    { include = "stests", from = "src" }
+]
+
+
+
+[tool.poetry.dependencies]
+# Python interpreter version
+python = "^3.10"
+# Python dependencies versions
+PyYAML = "^6.0"                 # https://pypi.org/project/PyYAML/
+attrs = "^23.1"                 # https://pypi.org/project/attrs/
+bandit = "^1.7"                 # https://pypi.org/project/bandit/
+black = "^23.1"                 # https://pypi.org/project/black/
+certifi = "^2023.5"             # https://pypi.org/project/certifi/
+coverage = "^7.2"               # https://pypi.org/project/coverage/
+cryptography = "^41.0"          # https://pypi.org/project/cryptography/
+delayed-assert = "^0.3"         # https://pypi.org/project/delayed-assert/
+dohq-artifactory = "^0.9"       # https://pypi.org/project/dohq-artifactory/
+fabric2 = "^3.0"                # https://pypi.org/project/fabric2/
+icmplib = "^3.0"                # https://pypi.org/project/icmplib/
+ipython = "^8.13"               # https://pypi.org/project/ipython/
+isort = "^5.12"                 # https://pypi.org/project/isort/
+lxml = "^4.9"                   # https://pypi.org/project/lxml/
+mypy = "^1.4"                   # https://pypi.org/project/mypy/
+no-implicit-optional = "^1.3"   # https://pypi.org/project/no-implicit-optional/
+paramiko = "^3.0"               # https://pypi.org/project/paramiko/
+pre-commit = "^3.3"             # https://pypi.org/project/pre-commit/
+pydocstyle = "^6.3"             # https://pypi.org/project/pydocstyle/
+pylint = "^2.17"                # https://pypi.org/project/pylint/
+pylint-gitlab = "^1.2"          # https://pypi.org/project/pylint-gitlab/
+pyopenssl = "^23.1"             # https://pypi.org/project/pyOpenSSL/
+pyserial = "^3.5"               # https://pypi.org/project/pyserial/
+pytest = "^7.2"                 # https://pypi.org/project/pytest/
+pytest-cov = "^4.0"             # https://pypi.org/project/pytest-cov/
+pytest-env = "^0.8"             # https://pypi.org/project/pytest-env/
+pytest-html = "^3.2"            # https://pypi.org/project/pytest-html/
+pytest-report = "^0.2"          # https://pypi.org/project/pytest-report/
+pytest-testrail-e2e = "^2.2"    # https://pypi.org/project/pytest-testrail-e2e/
+python-dotenv = "^1.0"          # https://pypi.org/project/python-dotenv/
+radon = "^5.1"                  # https://pypi.org/project/radon/
+requests = "^2.31"              # https://pypi.org/project/requests/
+ruff = "^0.0"                   # https://pypi.org/project/ruff/
+shellcheck-py = "^0.9"          # https://pypi.org/project/shellcheck-py/
+telnetlib3 = "^2.0"             # https://pypi.org/project/telnetlib3/
+testrail-api = "^1.11"          # https://pypi.org/project/testrail-api/
+types-PyYAML = "^6.0"           # https://pypi.org/project/types-PyYAML/
+types-paramiko = "^3.0"         # https://pypi.org/project/types-paramiko/
+types-pyopenssl = "^23.1"       # https://pypi.org/project/types-pyOpenSSL/
+types-requests = "^2.31"        # https://pypi.org/project/types-requests/
+types-setuptools = "^68.0"      # https://pypi.org/project/types-setuptools/
+xenon = "^0.9"                  # https://pypi.org/project/xenon/
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+
+[tool.black]
+include = '\.pyi?$'
+line-length = 120
+skip-magic-trailing-comma = true
+skip-string-normalization = true
+target-version = ["py311"]
