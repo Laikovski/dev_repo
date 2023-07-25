@@ -1,16 +1,7 @@
-from stests.lib.api.models.bclearer import Bclearer  # type: ignore
+import requests
+
 
 
 def test_example():
-    foo = Bclearer()
-    foo.get_data().status_code
-
-
-def test_example1():
-    foo = Bclearer()
-    foo.get_data().status_code
-
-
-def test_example2():
-    foo = Bclearer()
-    foo.get_data().status_code
+    response = requests.get('http://localhost:5050/foo/bar')
+    assert response.status_code == 200
