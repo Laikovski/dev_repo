@@ -1,8 +1,8 @@
 """Utils and helpers for tests."""
 import logging
-from typing import Optional
-import yaml
 import os
+import yaml
+from typing import Optional
 
 
 def read_yaml_file(path_to_file: str) -> Optional[dict]:

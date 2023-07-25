@@ -1,7 +1,8 @@
 """Collect all fixtures."""
 import pytest
-from src.stests.utils.utils import read_yaml_file
+
 from src.stests.config.constants import ConstantPaths
+from src.stests.utils.utils import read_yaml_file
 
 
 @pytest.fixture(scope="session")

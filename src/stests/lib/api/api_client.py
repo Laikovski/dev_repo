@@ -1,11 +1,9 @@
 """Module for api client."""
 import os
-
-import requests
-
-
 import os
 import requests
+import requests
+
 
 class APIClient:
     DEV_URL = 'https://dummyapi.io/data/v1'
