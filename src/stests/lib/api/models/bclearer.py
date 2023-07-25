@@ -1,5 +1,5 @@
 """Class contains Bclearer MVP Object."""
-from stests.lib.api.api_client import APIClient
+from stests.lib.api.api_client import APIClient  # type: ignore
 
 
 class Bclearer:

@@ -1,7 +1,6 @@
 """Module for api client."""
 import os
-import os
-import requests
+
 import requests
 
 
@@ -26,8 +25,8 @@ class APIClient:
                 user_auth = {"app-id": self.API_KEY}
             headers.update(user_auth)
 
-    def send_request(self, method: str, endpoint: str, data: dict = None, params: dict = None,
-                     files: dict = None, headers: dict = None, url: str = BASE_URL) -> requests.Response:
+    def send_request(self, method: str, endpoint: str, data: dict = {}, params: dict = {},
+                     files: dict = {}, headers: dict = {}, url: str = BASE_URL) -> requests.Response:
         """Send API request."""
         if headers is None:
             headers = {}
