@@ -1,5 +1,5 @@
 """Class contains Bclearer MVP Object."""
-from src.stests.lib.api.api_client import APIClient
+from stests.lib.api.api_client import APIClient
 
 
 class Bclearer:
