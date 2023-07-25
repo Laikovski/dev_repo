@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="Black">
+    <option name="cmdArguments" value="-l 120 -SC" />
+    <option name="enabledOnReformat" value="true" />
+    <option name="executionMode" value="BINARY" />
+    <option name="pathToExecutable" value="C:\Users\Artem_Krutalevich\AppData\Roaming\Python\Python311\Scripts\black.exe" />
+  </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (MVP)" project-jdk-type="Python SDK" />
 </project>
