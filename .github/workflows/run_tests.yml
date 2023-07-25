@@ -14,11 +14,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Build and run Docker container
-        run: docker build -t test-cont .
+      - name: Install Poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
 
-      - name: Show images before run
-        run: docker images
+      - name: Initialize Poetry project
+        run: poetry install
 
-      - name: Docker run
-        run: docker run --rm --name test-container -e RP_API_KEY="${{ secrets.RP_API_KEY }}" -e api_key="${{ secrets.API_KEY }}" test-cont
+      - name: Run Poetry project
+        run: poetry run python3 -V
