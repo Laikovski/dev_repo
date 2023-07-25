@@ -22,5 +22,13 @@ jobs:
       - name: Initialize Poetry project
         run: poetry install
 
+      - name: Cache Poetry Installed Environment
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pypoetry/virtualenvs
+          key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-poetry-
+
       - name: Run Poetry project
         run: poetry run python3 -m pytest tests
