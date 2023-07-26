@@ -12,7 +12,7 @@ def read_yaml_file(path_to_file: str) -> Optional[dict]:
     :param path_to_file: path to YAML file
     """
     try:
-        absolute_path = os.path.abspath(path_to_file)
+        absolute_path = os.path.abspath(path_to_file).replace('/tests', '')
         logging.info(f'Get File by path {absolute_path}')
         with open(absolute_path) as file:
             return yaml.safe_load(file)

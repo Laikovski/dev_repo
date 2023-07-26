@@ -4,4 +4,4 @@
 class ConstantPaths:
     """Class contains paths."""
 
-    PATH_TEST_DATA = "test_data/test_data.yml"
+    PATH_TEST_DATA = "src/stests/test_data/test_data.yml"
