@@ -1,12 +1,13 @@
 """Utils and helpers for tests."""
+from __future__ import annotations
+
 import logging
 import os
-from typing import Optional
 
 import yaml
 
 
-def read_yaml_file(path_to_file: str) -> Optional[dict]:
+def read_yaml_file(path_to_file: str) -> dict | None:
     """Return python dict object from Yaml by path.
 
     :param path_to_file: path to YAML file
