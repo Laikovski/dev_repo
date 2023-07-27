@@ -1,6 +1,4 @@
 """Collect all fixtures."""
-from __future__ import annotations
-
 import pytest
 
 from src.stests.config.constants import ConstantPaths

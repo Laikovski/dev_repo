@@ -1,6 +1,4 @@
 """Module for api client."""
-from __future__ import annotations
-
 import os
 
 import requests

@@ -1,6 +1,4 @@
-"""Class contains Bclearer MVP Object."""
-from __future__ import annotations
-
+"""Class contains bCLEARer MVP Object."""
 from stests.lib.api.api_client import APIClient  # type: ignore
 
 

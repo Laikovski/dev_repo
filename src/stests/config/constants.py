@@ -1,5 +1,4 @@
 """Module for configs test framework."""
-from __future__ import annotations
 
 
 class ConstantPaths:
