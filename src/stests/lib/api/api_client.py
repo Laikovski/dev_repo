@@ -1,5 +1,6 @@
 """Module for api client."""
-import os
+import logging
+from typing import Optional
 
 import requests
 
@@ -7,33 +8,27 @@ import requests
 class APIClient:
     """Init class APIClient."""
 
-    DEV_URL = 'https://dummyapi.io/data/v1'
-    STAGE_URL = ''
-    TEST_ENVIRONMENT = os.getenv('TEST_ENVIRONMENT')
-    BASE_URL = STAGE_URL if TEST_ENVIRONMENT == 'stage' else DEV_URL
     API_METHODS = ('get', 'put', 'post', 'delete', 'patch')
-    API_KEY = os.getenv('api_key')
-    session = requests.Session()
 
-    def __init__(self):
+    def __init__(self, token: str, role: str, url: str):
         """Initialize the object."""
+        self.token = token
+        self.role = role
+        self.session = requests.Session()
+        self.url = url
 
     def update_headers(self, headers: dict, method: str):
         """Update headers based on the API method and environment."""
         if method in self.API_METHODS:
-            if self.TEST_ENVIRONMENT == 'dev':
-                user_auth = {'app-id': self.API_KEY}
-            else:
-                user_auth = {'app-id': self.API_KEY}
+            user_auth = {'app-id': self.token}
             headers.update(user_auth)
 
     def send_request(
         self, method: str, endpoint: str, data: dict = {}, params: dict = {},
-        files: dict = {}, headers: dict = {}, url: str = BASE_URL,
+        files: dict = {}, headers: dict = {}, url: Optional[str] = None,
     ) -> requests.Response:
         """Send API request."""
-        if headers is None:
-            headers = {}
+        url = url or self.url
         self.update_headers(headers, method)
         request = requests.Request(
             method, f'{url}{endpoint}', json=data, params=params,
@@ -42,4 +37,8 @@ class APIClient:
         prepared_request = request.prepare()
         # self.session.verify = False
         response = self.session.send(prepared_request, timeout=10)
+        logging.info(
+            f'Response received successful - {endpoint}, - {response.status_code}',
+        )
+
         return response

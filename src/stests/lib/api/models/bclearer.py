@@ -1,26 +1,32 @@
 """Class contains bCLEARer MVP Object."""
-from stests.lib.api.api_client import APIClient  # type: ignore
+import logging
+
+from src.stests.config.constants import APIRoutes
 
 
 class Bclearer:
     """Object bCLEARer."""
 
-    def __init__(self):
+    def __init__(self, api_client):
         """Init object."""
-        self.api_client = APIClient()
+        self.api_client = api_client
 
-    def get_data(self):
-        """Get data method."""
+    def get_test_key(self):
+        """Get data cards."""
+        logging.info(f'Send request to endpoint - {APIRoutes.CARDS}')
+
         return self.api_client.send_request(method='get', endpoint='/user')
 
-    def get_user(self, user_id):
-        """Get User method."""
-        return self.api_client.send_request(method='get', endpoint=f'/users/{user_id}')
+    def get_cards(self):
+        """Get data cards."""
+        logging.info(f'Send request to endpoint - {APIRoutes.CARDS}')
 
-    def update_user(self, user_id, user_data):
-        """Update User method."""
-        return self.api_client.send_request(method='put', endpoint=f'/users/{user_id}', data=user_data)
+        return self.api_client.send_request(method='get', endpoint=APIRoutes.CARDS)
 
-    def delete_user(self, user_id):
-        """Delete User method."""
-        return self.api_client.send_request(method='delete', endpoint=f'/users/{user_id}')
+    def get_card_detail_view(self, refinery_id: int):
+        """Get card detail view."""
+        logging.info(f'Send request to endpoint - {APIRoutes.DETAIL_CARD}')
+        data = {
+            'refineryId': refinery_id,
+        }
+        return self.api_client.send_request(method='get', endpoint=APIRoutes.DETAIL_CARD, data=data)
