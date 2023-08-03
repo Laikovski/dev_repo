@@ -44,7 +44,7 @@ def test_dashboard_card_detail_view_response(test_data):
     ), f'Response JSON is empty or not found: {response_json}.'
 
 
-def test_validate_json_schema_detail_card(test_data):
+def test_validate_json_schema_detail_card(test_data, api_client):
     """
     Test to validate the JSON schema of the dashboard detail card.
 
@@ -59,7 +59,7 @@ def test_validate_json_schema_detail_card(test_data):
         APIRoutes.DETAIL_CARD, refinery_id=refinery_id,
     )
 
-    bCLERAer = Bclearer()
+    bCLERAer = Bclearer(api_client)
     bCLERAer.get_card_detail_view(refinery_id=123)
 
     response_json = response.json

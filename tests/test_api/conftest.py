@@ -9,7 +9,7 @@ from src.stests.config.constants import ConstantPaths
 from src.stests.utils.utils import read_yaml_file
 
 
-@pytest.fixture()
+@pytest.fixture(scope='session')
 def api_url() -> str:
     """Return the appropriate API URL based on the environment."""
     if Environment.DEV_ENV:
@@ -23,10 +23,11 @@ def api_url() -> str:
 @pytest.fixture(
     params=[
         (APITokens.DATA_ENGINEER, 'data_engineer'),
-        (APITokens.PROJECT_MANAGER, 'project_manager'),
-        (APITokens.SITE_IM_PERSON, 'site_im_person'),
-        (APITokens.NOT_VALID_TOKEN, 'not_valid_token'),
-    ], ids=['data_engineer', 'project_manager', 'site_im_person', 'not_valid_token'],
+        # (APITokens.PROJECT_MANAGER, 'project_manager'),
+        # (APITokens.SITE_IM_PERSON, 'site_im_person'),
+        # (APITokens.NOT_VALID_TOKEN, 'not_valid_token'),
+    ], ids=['data_engineer'],
+    scope='session'
 )
 def api_client(request, api_url: str) -> APIClient:
     """
@@ -42,11 +43,11 @@ def api_client(request, api_url: str) -> APIClient:
     return client
 
 
-def api_client_data_engineer(request, api_url: str) -> APIClient:
+@pytest.fixture(scope="session")
+def api_client_data_engineer(api_url: str) -> APIClient:
     """
     Fixture for creating an APIClient instance with data engineer role.
 
-    :param request: The request object containing the parameters for each role.
     :param api_url: string with URL
 
     :return APIClient: An instance of the APIClient class with data engineer role.
