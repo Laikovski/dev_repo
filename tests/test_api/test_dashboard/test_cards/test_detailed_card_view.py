@@ -7,7 +7,7 @@ from stests.config.constants import APIRoutes
 from stests.json_schemas.dashboard.schema_detail_card import DetailCardResponse
 from stests.lib.api.models.bclearer import Bclearer
 
-from src.stests.lib.api.models.mock_bclearer import MockAPIClient
+from stests.lib.api.models.mock_bclearer import MockAPIClient
 
 
 @pytest.mark.smoke

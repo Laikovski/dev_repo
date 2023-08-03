@@ -1,0 +1,156 @@
+{
+  "cards_response": {
+    "token": "fjweqjfpoijtt9347613648501145",
+    "allowedRefinery": [
+      {
+        "name": "Moerdijk",
+        "refineryId": 124,
+        "order": 1
+      },
+      {
+        "name": "Bukom",
+        "refineryId": "123",
+        "order": 2
+      }
+    ],
+    "refineryDetails": [
+      {
+        "name": "Moerdijk",
+        "refineryId": 123,
+        "details": {
+          "sites": 3,
+          "plants": 24,
+          "units": 147,
+          "tags": 399,
+          "equipment": 451000
+        },
+        "issuesTotal": 165652,
+        "issuesRsolved": 22566,
+        "pipelineStatus": "running",
+        "pipelineStatusDetails": "4/4",
+        "lastRunDate": "2023-07-26 11:43:24",
+        "pipelineFailedStatus": "success"
+      },
+      {
+        "name": "Bukom",
+        "refineryId": 124,
+        "details": {
+          "sites": 3,
+          "plants": 24,
+          "units": 147,
+          "tags": 399,
+          "equipment": 451000
+        },
+        "issuesTotal": 165652,
+        "issuesRsolved": 22566,
+        "pipelineStatus": "running",
+        "pipelineStatusDetails": "4/4",
+        "lastRunDate": "2023-07-26 11:43:24",
+        "pipelineFailedStatus": "success"
+      }
+    ]
+  },
+  "card_detail_view": {
+    "token": "fjweqjfpoijtt9347613648501145",
+    "refineryId": 123,
+    "refineryName": "Moerdijk",
+    "pipelinsDetails": {
+      "cleInSystem": {
+        "title": "CLE in system",
+        "pipelines": [
+          {
+            "pipelineId": 1000,
+            "name": "GSAP",
+            "issuesTotal": "54246",
+            "issuesRsolved": "22148",
+            "pipelineStatus": "running",
+            "pipelineStatusDetails": "5/12",
+            "lastRunDate": "2023-07-26 11:43:24",
+            "pipelineFailedStatus": "success"
+          },
+          {
+            "pipelineId": "1001",
+            "name": "SPI",
+            "issuesTotal": "54246",
+            "issuesRsolved": "22148",
+            "pipelineStatus": "running",
+            "pipelineStatusDetails": "5/12",
+            "lastRunDate": "2023-07-26 11:43:24",
+            "pipelineFailedStatus": "success"
+          },
+          {
+            "pipelineId": "1002",
+            "name": "PI",
+            "issuesTotal": "54246",
+            "issuesRsolved": "22148",
+            "pipelineStatus": "running",
+            "pipelineStatusDetails": "5/12",
+            "lastRunDate": "2023-07-26 11:43:24",
+            "pipelineFailedStatus": "success"
+          },
+          {
+            "pipelineId": "1003",
+            "name": "wIMS",
+            "issuesTotal": "54246",
+            "issuesRsolved": "22148",
+            "pipelineStatus": "running",
+            "pipelineStatusDetails": "5/12",
+            "lastRunDate": "2023-07-26 11:43:24",
+            "pipelineFailedStatus": "success"
+          }
+        ]
+      },
+      "eaAcrossSystem": {
+        "title": "EA across system",
+        "pipelines": [
+          {
+            "pipelineId": "1004",
+            "name": "bCLEARer PBS",
+            "issuesTotal": "54246",
+            "issuesRsolved": "22148",
+            "pipelineStatus": "running",
+            "pipelineStatusDetails": "5/12",
+            "lastRunDate": "2023-07-26 11:43:24",
+            "pipelineFailedStatus": "success"
+          }
+        ]
+      },
+      "rLoaders": {
+        "title": "R Loaders",
+        "pipelines": [
+          {
+            "pipelineId": "1005",
+            "name": "AVEVA AIM - A",
+            "pipelineStatus": "running",
+            "pipelineStatusDetails": "5/12",
+            "lastRunDate": "2023-07-26 11:43:24",
+            "pipelineFailedStatus": "success"
+          },
+          {
+            "pipelineId": "1006",
+            "name": "Assai Cloud",
+            "pipelineStatus": "running",
+            "pipelineStatusDetails": "5/12",
+            "lastRunDate": "2023-07-26 11:43:24",
+            "pipelineFailedStatus": "success"
+          },
+          {
+            "pipelineId": "1007",
+            "name": "KDI",
+            "pipelineStatus": "running",
+            "pipelineStatusDetails": "5/12",
+            "lastRunDate": "2023-07-26 11:43:24",
+            "pipelineFailedStatus": "success"
+          }
+        ]
+      }
+    }
+  },
+  "run_pipeline" : {
+  "token": "fjweqjfpoijtt9347613648501145",
+  "refineryId": 123,
+  "pipelineId": 1000,
+  "statusOfRequest": "success"
+}
+}
+
