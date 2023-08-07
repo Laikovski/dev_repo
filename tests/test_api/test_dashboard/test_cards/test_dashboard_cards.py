@@ -3,15 +3,13 @@ import pytest
 from pydantic import ValidationError
 from stests.asserts.api_asserts import check_verify_json_not_empty
 from stests.asserts.api_asserts import check_verify_response_status_code
-from stests.config.constants import APIRoutes
-from stests.json_schemas.dashboard.face_side_of_the_card import APICardData
+from stests.json_schemas.dashboard.face_side_of_the_card import DashboardCard
 from stests.lib.api.models.bclearer import Bclearer
 
-from stests.lib.api.models.mock_bclearer import MockAPIClient
 
 
 @pytest.mark.smoke
-def test_dashboard_face_side_card_response(test_data):
+def test_dashboard_face_side_card_response(test_data, api_client):
     """
     Check dashboards face side card.
 
@@ -21,44 +19,50 @@ def test_dashboard_face_side_card_response(test_data):
 
     :param test_data: dict
     """
-    mock_api_client = MockAPIClient()
-    response = mock_api_client.get_cards(APIRoutes.CARDS)
+    bclearer = Bclearer(api_client)
+    response = bclearer.get_cards()
 
     expected_status_code = 200
     actual_status_code = response.status_code
 
-    response_json = response.json
+    response_json = response.json()
 
-    assert check_verify_response_status_code(response.status_code, expected_status_code), \
-        f"Expected result: {expected_status_code} doesn't match actual result: {actual_status_code}."
+    if api_client.role == "data_engineer":
 
-    # TODO: assert for check headers
+        assert check_verify_response_status_code(response.status_code, expected_status_code), \
+            f"Expected result: {expected_status_code} doesn't match actual result: {actual_status_code}."
 
-    assert check_verify_json_not_empty(
+        # TODO: assert for check headers
+
+        assert check_verify_json_not_empty(
         response_json,
-    ), f'Response JSON is empty or not found: {response_json}.'
+        ), f'Response JSON is empty or not found: {response_json}.'
+
+    else:
+        assert actual_status_code == 400, (f"Actual status code {actual_status_code} "
+                                           f"doesn't match expected {expected_status_code}, for {api_client.role}")
 
 
-def test_validate_json_schema_cards(test_data):
+def test_validate_json_schema_dashboard_card(test_data, api_client_data_engineer):
     """
-    Test to validate the JSON schema of the dashboard face side cards.
+    Test to validate the JSON schema of the dashboard face side card.
 
     This test checks if the response JSON for dashboard face side cards
     matches the expected JSON schema defined in APICardData.model_validate.
     If there is a validation error, the test will fail with an appropriate message.
     """
-    mock_api_client = MockAPIClient()
-    response = mock_api_client.get_cards(APIRoutes.CARDS)
+    bclearer = Bclearer(api_client_data_engineer)
+    response = bclearer.get_cards()
 
-    response_json = response.json
+    response_json = response.json()
 
     try:
-        APICardData.model_validate(response_json)
+        DashboardCard.model_validate(response_json)
     except ValidationError as e:
         pytest.fail(f'JSON schema validation error: {e}')
 
 
-def test_check_correct_refinery_names(test_data):
+def test_check_correct_values_for_moerdijk(api_client_data_engineer, moerdijk_test_data):
     """
     Test to check if the refinery names in the response JSON are correct.
 
@@ -68,32 +72,12 @@ def test_check_correct_refinery_names(test_data):
     expected value or if the 'refinery_name' is unknown, the test will fail with
     an appropriate message.
     """
-    mock_api_client = MockAPIClient()
-    response = mock_api_client.get_cards(APIRoutes.CARDS)
+    bclearer = Bclearer(api_client_data_engineer)
+    response = bclearer.get_cards()
 
-    response_json = response.json
+    response_json = response.json()
 
-    plants = test_data.get('plants')
+    refactored_json = DashboardCard(**response_json)
 
-    for refinery in response_json['refineryDetails']:
-        refinery_name = refinery['name']
-        refinery_id = refinery['refineryId']
-
-        if refinery_name in plants:
-            expected_refinery_id = plants[refinery_name]
-            assert refinery_id == expected_refinery_id, f"Invalid 'refineryId' value for '{refinery_name}'. " \
-                                                        f'Expected: {expected_refinery_id}, Actual: {refinery_id}.'
-        else:
-            pytest.fail(f'Unknown refinery name: {refinery_name}')
-
-
-def test_validate_key(test_data, api_client):
-    """Here text."""
-    bclearer = Bclearer(api_client)
-    response = bclearer.get_test_key()
-    response_json = response.status_code
-
-    if api_client.role == 'data_engineer':
-        assert response_json == 200
-    else:
-        assert response_json == 402
+    assert refactored_json.site.site_name == moerdijk_test_data.get("site_name")
+    assert refactored_json.site.site_unique_identifier == moerdijk_test_data.get("unique_identifier")
