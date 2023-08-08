@@ -1,156 +1,403 @@
 {
-  "cards_response": {
-    "token": "fjweqjfpoijtt9347613648501145",
-    "allowedRefinery": [
+  "unique_identifier": "112c33f0-adff-4a48-aaeb-eec1524d9f44",
+  "name": "bCLEARer physical breakdown structure",
+  "execution_details": {
+    "last_executed_on": 1627327200,
+    "status": "running",
+    "status_display_key": "common.pipelines_statuses.running",
+    "last_error_message": "",
+    "blocked_reason": "",
+    "stages_details": {
+      "current_running_stage": 1,
+      "total_stages": 12
+    },
+    "issues_details": [
       {
-        "name": "Moerdijk",
-        "refineryId": 124,
-        "order": 1
+        "type": "not_resolved",
+        "issue_status_display_key": "common.issue_types.not_resolved",
+        "no_of_issues": 133215
       },
       {
-        "name": "Bukom",
-        "refineryId": "123",
-        "order": 2
-      }
-    ],
-    "refineryDetails": [
-      {
-        "name": "Moerdijk",
-        "refineryId": 123,
-        "details": {
-          "sites": 3,
-          "plants": 24,
-          "units": 147,
-          "tags": 399,
-          "equipment": 451000
-        },
-        "issuesTotal": 165652,
-        "issuesRsolved": 22566,
-        "pipelineStatus": "running",
-        "pipelineStatusDetails": "4/4",
-        "lastRunDate": "2023-07-26 11:43:24",
-        "pipelineFailedStatus": "success"
+        "type": "resolved",
+        "issue_status_display_key": "common.issue_types.resolved",
+        "no_of_issues": 22566
       },
       {
-        "name": "Bukom",
-        "refineryId": 124,
-        "details": {
-          "sites": 3,
-          "plants": 24,
-          "units": 147,
-          "tags": 399,
-          "equipment": 451000
-        },
-        "issuesTotal": 165652,
-        "issuesRsolved": 22566,
-        "pipelineStatus": "running",
-        "pipelineStatusDetails": "4/4",
-        "lastRunDate": "2023-07-26 11:43:24",
-        "pipelineFailedStatus": "success"
+        "type": "in_progress",
+        "issue_status_display_key": "common.issue_types.in_progress",
+        "no_of_issues": 871
       }
     ]
   },
-  "card_detail_view": {
-    "token": "fjweqjfpoijtt9347613648501145",
-    "refineryId": 123,
-    "refineryName": "Moerdijk",
-    "pipelinsDetails": {
-      "cleInSystem": {
-        "title": "CLE in system",
-        "pipelines": [
-          {
-            "pipelineId": 1000,
-            "name": "GSAP",
-            "issuesTotal": "54246",
-            "issuesRsolved": "22148",
-            "pipelineStatus": "running",
-            "pipelineStatusDetails": "5/12",
-            "lastRunDate": "2023-07-26 11:43:24",
-            "pipelineFailedStatus": "success"
-          },
-          {
-            "pipelineId": "1001",
-            "name": "SPI",
-            "issuesTotal": "54246",
-            "issuesRsolved": "22148",
-            "pipelineStatus": "running",
-            "pipelineStatusDetails": "5/12",
-            "lastRunDate": "2023-07-26 11:43:24",
-            "pipelineFailedStatus": "success"
-          },
-          {
-            "pipelineId": "1002",
-            "name": "PI",
-            "issuesTotal": "54246",
-            "issuesRsolved": "22148",
-            "pipelineStatus": "running",
-            "pipelineStatusDetails": "5/12",
-            "lastRunDate": "2023-07-26 11:43:24",
-            "pipelineFailedStatus": "success"
-          },
-          {
-            "pipelineId": "1003",
-            "name": "wIMS",
-            "issuesTotal": "54246",
-            "issuesRsolved": "22148",
-            "pipelineStatus": "running",
-            "pipelineStatusDetails": "5/12",
-            "lastRunDate": "2023-07-26 11:43:24",
-            "pipelineFailedStatus": "success"
-          }
-        ]
-      },
-      "eaAcrossSystem": {
-        "title": "EA across system",
-        "pipelines": [
-          {
-            "pipelineId": "1004",
-            "name": "bCLEARer PBS",
-            "issuesTotal": "54246",
-            "issuesRsolved": "22148",
-            "pipelineStatus": "running",
-            "pipelineStatusDetails": "5/12",
-            "lastRunDate": "2023-07-26 11:43:24",
-            "pipelineFailedStatus": "success"
-          }
-        ]
-      },
-      "rLoaders": {
-        "title": "R Loaders",
-        "pipelines": [
-          {
-            "pipelineId": "1005",
-            "name": "AVEVA AIM - A",
-            "pipelineStatus": "running",
-            "pipelineStatusDetails": "5/12",
-            "lastRunDate": "2023-07-26 11:43:24",
-            "pipelineFailedStatus": "success"
-          },
-          {
-            "pipelineId": "1006",
-            "name": "Assai Cloud",
-            "pipelineStatus": "running",
-            "pipelineStatusDetails": "5/12",
-            "lastRunDate": "2023-07-26 11:43:24",
-            "pipelineFailedStatus": "success"
-          },
-          {
-            "pipelineId": "1007",
-            "name": "KDI",
-            "pipelineStatus": "running",
-            "pipelineStatusDetails": "5/12",
-            "lastRunDate": "2023-07-26 11:43:24",
-            "pipelineFailedStatus": "success"
-          }
-        ]
-      }
-    }
+  "site": {
+    "site_unique_identifier": "112c33f0-adff-4a48-aaeb-eec1524d9f44",
+    "site_name": "Moerdijk"
   },
-  "run_pipeline" : {
-  "token": "fjweqjfpoijtt9347613648501145",
-  "refineryId": 123,
-  "pipelineId": 1000,
-  "statusOfRequest": "success"
+  "plant_breakdown_structure_summary": [
+    {
+      "structure_summary_display_key": "page.plant_breakdown_structure_summary.sites",
+      "value": 3,
+      "display_order": 1,
+      "issues_details": [
+        {
+          "type": "not_resolved",
+          "issue_status_display_key": "common.issue_types.not_resolved",
+          "no_of_issues": 133215
+        },
+        {
+          "type": "resolved",
+          "issue_status_display_key": "common.issue_types.resolved",
+          "no_of_issues": 22566
+        },
+        {
+          "type": "in_progress",
+          "issue_status_display_key": "common.issue_types.in_progress",
+          "no_of_issues": 871
+        }
+      ]
+    },
+    {
+      "structure_summary_display_key": "page.plant_breakdown_structure_summary.plants",
+      "value": 24,
+      "display_order": 2,
+      "issues_details": [
+        {
+          "type": "not_resolved",
+          "issue_status_display_key": "common.issue_types.not_resolved",
+          "no_of_issues": 133215
+        },
+        {
+          "type": "resolved",
+          "issue_status_display_key": "common.issue_types.resolved",
+          "no_of_issues": 22566
+        },
+        {
+          "type": "in_progress",
+          "issue_status_display_key": "common.issue_types.in_progress",
+          "no_of_issues": 871
+        }
+      ]
+    },
+    {
+      "structure_summary_display_key": "page.plant_breakdown_structure_summary.units",
+      "value": 147,
+      "display_order": 3,
+      "issues_details": [
+        {
+          "type": "not_resolved",
+          "issue_status_display_key": "common.issue_types.not_resolved",
+          "no_of_issues": 133215
+        },
+        {
+          "type": "resolved",
+          "issue_status_display_key": "common.issue_types.resolved",
+          "no_of_issues": 22566
+        },
+        {
+          "type": "in_progress",
+          "issue_status_display_key": "common.issue_types.in_progress",
+          "no_of_issues": 871
+        }
+      ]
+    },
+    {
+      "structure_summary_display_key": "page.plant_breakdown_structure_summary.tags",
+      "value": 399267,
+      "display_order": 4,
+      "issues_details": [
+        {
+          "type": "not_resolved",
+          "issue_status_display_key": "common.issue_types.not_resolved",
+          "no_of_issues": 133215
+        },
+        {
+          "type": "resolved",
+          "issue_status_display_key": "common.issue_types.resolved",
+          "no_of_issues": 22566
+        },
+        {
+          "type": "in_progress",
+          "issue_status_display_key": "common.issue_types.in_progress",
+          "no_of_issues": 871
+        }
+      ]
+    },
+    {
+      "structure_summary_display_key": "page.plant_breakdown_structure_summary.equipments",
+      "value": 451167,
+      "display_order": 5,
+      "issues_details": [
+        {
+          "type": "not_resolved",
+          "issue_status_display_key": "common.issue_types.not_resolved",
+          "no_of_issues": 133215
+        },
+        {
+          "type": "resolved",
+          "issue_status_display_key": "common.issue_types.resolved",
+          "no_of_issues": 22566
+        },
+        {
+          "type": "in_progress",
+          "issue_status_display_key": "common.issue_types.in_progress",
+          "no_of_issues": 871
+        }
+      ]
+    }
+  ],
+  "groups_of_pipelines": [
+    {
+      "unique_identifier": "112c33f0-adff-4a48-aaeb-eec1524d9f44",
+      "display_key": "components.groups_of_pipelines.cle_in_system",
+      "display_order": 1,
+      "pipelines": [
+        {
+          "unique_identifier": "112c33f0-adff-4a48-aaeb-eec1524d9f44",
+          "name": "GSAP",
+          "display_order": 1,
+          "download_artifacts_api_link": "",
+          "execution_details": {
+            "last_executed_on": 1627327200,
+            "status": "succeeded",
+            "status_display_key": "common.pipelines_statuses.succeeded",
+            "last_error_message": "",
+            "blocked_reason": "",
+            "stages_details": {
+              "current_running_stage": 12,
+              "total_stages": 12
+            },
+            "issues_details": [
+              {
+                "type": "open_issues",
+                "issue_status_display_key": "common.issue_types.open_issues",
+                "no_of_issues": 54000
+              },
+              {
+                "type": "resolved",
+                "issue_status_display_key": "common.issue_types.resolved",
+                "no_of_issues": 24000
+              }
+            ]
+          }
+        },
+        {
+          "unique_identifier": "112c33f0-adff-4a48-aaeb-eec1524d9f44",
+          "name": "SPI",
+          "display_order": 2,
+          "download_artifacts_api_link": "",
+          "execution_details": {
+            "last_executed_on": 1627327200,
+            "status": "succeeded",
+            "status_display_key": "common.pipelines_statuses.succeeded",
+            "last_error_message": "",
+            "blocked_reason": "",
+            "stages_details": {
+              "current_running_stage": 12,
+              "total_stages": 12
+            },
+            "issues_details": [
+              {
+                "type": "open_issues",
+                "issue_status_display_key": "common.issue_types.open_issues",
+                "no_of_issues": 54000
+              },
+              {
+                "type": "resolved",
+                "issue_status_display_key": "common.issue_types.resolved",
+                "no_of_issues": 24000
+              }
+            ]
+          }
+        },
+        {
+          "unique_identifier": "112c33f0-adff-4a48-aaeb-eec1524d9f44",
+          "name": "PI",
+          "display_order": 3,
+          "download_artifacts_api_link": "",
+          "execution_details": {
+            "last_executed_on": 1627327200,
+            "status": "succeeded",
+            "status_display_key": "common.pipelines_statuses.succeeded",
+            "last_error_message": "",
+            "blocked_reason": "",
+            "stages_details": {
+              "current_running_stage": 12,
+              "total_stages": 12
+            },
+            "issues_details": [
+              {
+                "type": "open_issues",
+                "issue_status_display_key": "common.issue_types.open_issues",
+                "no_of_issues": 54000
+              },
+              {
+                "type": "resolved",
+                "issue_status_display_key": "common.issue_types.resolved",
+                "no_of_issues": 24000
+              }
+            ]
+          }
+        },
+        {
+          "unique_identifier": "112c33f0-adff-4a48-aaeb-eec1524d9f44",
+          "name": "wIMS",
+          "display_order": 2,
+          "download_artifacts_api_link": "",
+          "execution_details": {
+            "last_executed_on": 1627327200,
+            "status": "succeeded",
+            "status_display_key": "common.pipelines_statuses.succeeded",
+            "last_error_message": "",
+            "blocked_reason": "",
+            "stages_details": {
+              "current_running_stage": 12,
+              "total_stages": 12
+            },
+            "issues_details": [
+              {
+                "type": "open_issues",
+                "issue_status_display_key": "common.issue_types.open_issues",
+                "no_of_issues": 54000
+              },
+              {
+                "type": "resolved",
+                "issue_status_display_key": "common.issue_types.resolved",
+                "no_of_issues": 24000
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "unique_identifier": "112c33f0-adff-4a48-aaeb-eec1524d9f44",
+      "display_key": "components.groups_of_pipelines.ea_across_system",
+      "display_order": 2,
+      "pipelines": [
+        {
+          "unique_identifier": "112c33f0-adff-4a48-aaeb-eec1524d9f44",
+          "name": "bCLEARer PBS",
+          "display_order": 1,
+          "download_artifacts_api_link": "",
+          "execution_details": {
+            "last_executed_on": 1627327200,
+            "status": "succeeded",
+            "status_display_key": "common.pipelines_statuses.succeeded",
+            "last_error_message": "",
+            "blocked_reason": "",
+            "stages_details": {
+              "current_running_stage": 5,
+              "total_stages": 5
+            },
+            "issues_details": [
+              {
+                "type": "open_issues",
+                "issue_status_display_key": "common.issue_types.open_issues",
+                "no_of_issues": 54000
+              },
+              {
+                "type": "resolved",
+                "issue_status_display_key": "common.issue_types.resolved",
+                "no_of_issues": 24000
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "unique_identifier": "112c33f0-adff-4a48-aaeb-eec1524d9f44",
+      "display_key": "components.groups_of_pipelines.r_loaders",
+      "display_order": 3,
+      "pipelines": [
+        {
+          "unique_identifier": "112c33f0-adff-4a48-aaeb-eec1524d9f44",
+          "name": "AVEVA AIM-A",
+          "display_order": 1,
+          "download_artifacts_api_link": "./files/file_example.csv",
+          "execution_details": {
+            "last_executed_on": 1627327200,
+            "status": "succeeded",
+            "status_display_key": "common.pipelines_statuses.succeeded",
+            "last_error_message": "",
+            "blocked_reason": "",
+            "stages_details": {
+              "current_running_stage": 5,
+              "total_stages": 5
+            },
+            "issues_details": [
+              {
+                "type": "open_issues",
+                "issue_status_display_key": "common.issue_types.open_issues",
+                "no_of_issues": 54000
+              },
+              {
+                "type": "resolved",
+                "issue_status_display_key": "common.issue_types.resolved",
+                "no_of_issues": 24000
+              }
+            ]
+          }
+        },
+        {
+          "unique_identifier": "112c33f0-adff-4a48-aaeb-eec1524d9f44",
+          "name": "Assai Cloud",
+          "display_order": 2,
+          "download_artifacts_api_link": "./files/file_example.csv",
+          "execution_details": {
+            "last_executed_on": 1627327200,
+            "status": "succeeded",
+            "status_display_key": "common.pipelines_statuses.succeeded",
+            "last_error_message": "",
+            "blocked_reason": "",
+            "stages_details": {
+              "current_running_stage": 5,
+              "total_stages": 5
+            },
+            "issues_details": [
+              {
+                "type": "open_issues",
+                "issue_status_display_key": "common.issue_types.open_issues",
+                "no_of_issues": 54000
+              },
+              {
+                "type": "resolved",
+                "issue_status_display_key": "common.issue_types.resolved",
+                "no_of_issues": 24000
+              }
+            ]
+          }
+        },
+        {
+          "unique_identifier": "112c33f0-adff-4a48-aaeb-eec1524d9f44",
+          "name": "KDI",
+          "display_order": 3,
+          "download_artifacts_api_link": "./files/file_example.csv",
+          "execution_details": {
+            "last_executed_on": 1627327200,
+            "status": "succeeded",
+            "status_display_key": "common.pipelines_statuses.succeeded",
+            "last_error_message": "",
+            "blocked_reason": "",
+            "stages_details": {
+              "current_running_stage": 5,
+              "total_stages": 5
+            },
+            "issues_details": [
+              {
+                "type": "open_issues",
+                "issue_status_display_key": "common.issue_types.open_issues",
+                "no_of_issues": 54000
+              },
+              {
+                "type": "resolved",
+                "issue_status_display_key": "common.issue_types.resolved",
+                "no_of_issues": 24000
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
 }
-}
-

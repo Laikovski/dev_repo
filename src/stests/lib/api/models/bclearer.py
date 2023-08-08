@@ -21,7 +21,7 @@ class Bclearer:
         """Get data cards."""
         logging.info(f'Send request to endpoint - {APIRoutes.CARDS}')
 
-        return self.api_client.send_request(method='get', endpoint=APIRoutes.CARDS)
+        return self.api_client.send_request(method='post', endpoint=APIRoutes.CARDS)
 
     def get_card_detail_view(self, refinery_id: int):
         """Get card detail view."""

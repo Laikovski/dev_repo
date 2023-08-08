@@ -1,3 +1,32 @@
 plants:
   "Moerdijk": 123
   "Bukom": 124
+
+"sites":
+  "Moerdijk":
+    "site_name": Moerdijk
+    "unique_identifier": "112c33f0-adff-4a48-aaeb-eec1524d9f44"
+    "name_uuid": "668f5240-91bd-4a1f-a0e1-d65a45f547e7"
+    "namespace_uuid": "1ee67fab-4da1-44f0-a20d-0a44dae59c8c"
+    "data_sets":
+      - "wims"
+      - "wims_frontend"
+      - "aim_edms"
+      - "gsap"
+      - "spi"
+      - "pi"
+      - "3d_model"
+
+  "bukom":
+    "unique_identifier": "915e1793-f55c-46df-b569-4322b73f4792"
+    "name_uuid": "ea2c6e10-e570-4d0a-855e-fbb500e2c72d"
+    "namespace_uuid": "1ee67fab-4da1-44f0-a20d-0a44dae59c8c"
+    "data_sets":
+      "datasets":
+        - "wims"
+        - "wims_frontend"
+        - "gsap"
+        - "spi"
+        - "pi"
+        - "excel_asset_registers"
+        - "assai"

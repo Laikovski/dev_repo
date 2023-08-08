@@ -12,7 +12,7 @@ class ConstantPaths:
 class APIRoutes(str, Enum):
     """Class contains endpoints."""
 
-    CARDS = '/get_cards'
+    CARDS = '/cards_information'
     DETAIL_CARD = '/card_detail_view'
     RUN_PIPELINE = '/run_pipeline'
 
@@ -24,10 +24,11 @@ class APIRoutes(str, Enum):
 class APITokens(str, Enum):
     """Class contains test key for different roles."""
 
-    DATA_ENGINEER = os.getenv('DATA_ENGINEER')
-    PROJECT_MANAGER = os.getenv('PROJECT_MANAGER')
-    SITE_IM_PERSON = os.getenv('SITE_IM_PERSON')
+    DATA_ENGINEER_TOKEN = os.getenv('DATA_ENGINEER_TOKEN')
+    PROJECT_MANAGER_TOKEN = os.getenv('PROJECT_MANAGER_TOKEN')
+    SITE_IM_PERSON_TOKEN = os.getenv('SITE_IM_PERSON_TOKEN')
     NOT_VALID_TOKEN = 'token'
+    EMPTY_TOKEN = ''
 
     def __str__(self) -> str:
         """Return value."""
@@ -37,7 +38,7 @@ class APITokens(str, Enum):
 class APIUrls(str, Enum):
     """Class contains paths."""
 
-    DEV_URL = 'https://dummyapi.io/data/v1'
+    DEV_URL = 'https://localhost:9090'
     STAGE_URL = ''
     PROD_URL = ''
 
@@ -49,5 +50,5 @@ class APIUrls(str, Enum):
 class Environment(str, Enum):
     """Class contains environments."""
 
-    DEV_ENV = True
-    STAGE_ENV = False or os.getenv('test')
+    DEV_ENV = False or os.getenv('DEV_ENV')
+    STAGE_ENV = False or os.getenv('STAGE_ENV')

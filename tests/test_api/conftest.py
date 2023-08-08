@@ -1,4 +1,6 @@
 """Collect all fixtures."""
+from typing import Optional
+
 import pytest
 from stests.config.constants import APITokens
 from stests.config.constants import APIUrls
@@ -26,10 +28,10 @@ def api_url() -> str:
         (APITokens.PROJECT_MANAGER_TOKEN, 'project_manager'),
         (APITokens.SITE_IM_PERSON_TOKEN, 'site_im_person'),
         (APITokens.NOT_VALID_TOKEN, 'not_valid_token'),
-    ],ids=[
-        'data_engineer', 'project_manager', 'site_im_person', 'not_valid_token'
+    ], ids=[
+        'data_engineer', 'project_manager', 'site_im_person', 'not_valid_token',
     ],
-    scope='session'
+    scope='session',
 )
 def api_client(request, api_url: str) -> APIClient:
     """
@@ -45,7 +47,7 @@ def api_client(request, api_url: str) -> APIClient:
     return client
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope='session')
 def api_client_data_engineer(api_url: str) -> APIClient:
     """
     Fixture for creating an APIClient instance with data engineer role.
@@ -54,17 +56,19 @@ def api_client_data_engineer(api_url: str) -> APIClient:
 
     :return APIClient: An instance of the APIClient class with data engineer role.
     """
-    client = APIClient(APITokens.DATA_ENGINEER_TOKEN, "data_engineer", api_url)
+    client = APIClient(APITokens.DATA_ENGINEER_TOKEN, 'data_engineer', api_url)
     return client
 
 
 @pytest.fixture(scope='session')
-def test_data() -> dict:
+def test_data() -> Optional[dict]:
     """Collect test data from YAML file."""
     return read_yaml_file(ConstantPaths.PATH_TEST_DATA)
 
 
 @pytest.fixture()
-def moerdijk_test_data(test_data: dict):
+def moerdijk_test_data(test_data: Optional[dict]) -> Optional[dict]:
     """Collect test data for Moerdijk."""
-    return test_data.get("sites").get("Moerdijk")
+    if test_data is not None:
+        return test_data.get('sites', {}).get('Moerdijk')
+    return None

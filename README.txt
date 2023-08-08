@@ -1,5 +1,14 @@
+### Global variables
+    file - constants.py
 
+    -Tokens-
+    **${DATA_ENGINEER_TOKEN}** - required for running tests with the Data Engineer role.
+    **${PROJECT_MANAGER_TOKEN}** - required for running tests with the Project Manager role.
+    **${SITE_IM_PERSON_TOKEN}** - required for running tests with the Site Incident Management Person role.
 
+    -Environments-
+    **${DEV_ENV}** -  boolean value
+    **${STAGE_ENV}** - boolean value
 
 ### Pre-commit hooks for Python Code Quality
 

@@ -14,8 +14,8 @@ class APIClient:
         """Initialize the object."""
         self.token = token
         self.role = role
-        self.session = requests.Session()
         self.url = url
+        self.session = requests.Session()
 
     def update_headers(self, headers: dict, method: str):
         """Update headers based on the API method and environment."""
@@ -35,7 +35,7 @@ class APIClient:
             headers=headers, files=files,
         )
         prepared_request = request.prepare()
-        # self.session.verify = False
+        self.session.verify = False
         response = self.session.send(prepared_request, timeout=10)
         logging.info(
             f'Response received successful - {endpoint}, - {response.status_code}',
